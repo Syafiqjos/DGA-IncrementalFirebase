@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297770897143",
+    "project_id": "incremental-firebase",
+    "storage_bucket": "incremental-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297770897143:android:79ae78c8fd515bc9afcdf2",
+        "android_client_info": {
+          "package_name": "com.syqscode.incremental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297770897143-ts0fbo1rk8jq10g76bqkdhsbai8jhatd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyqywPap3swmFkM4jH2yaJmebuBTyL2QM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297770897143-ts0fbo1rk8jq10g76bqkdhsbai8jhatd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
