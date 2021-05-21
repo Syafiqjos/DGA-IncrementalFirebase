@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     private List<TapText> _tapTextPool = new List<TapText> ();
     private float _collectSecond;
 
+    public float SaveDelay = 5f;
+    private float _saveDelayCounter;
+
     private void Start ()
     {
         AddAllResources ();
@@ -45,8 +48,11 @@ public class GameManager : MonoBehaviour
 
     private void Update ()
     {
+        float deltaTime = Time.unscaledDeltaTime;
+        _saveDelayCounter -= deltaTime;
+
         // Fungsi untuk selalu mengeksekusi CollectPerSecond setiap detik
-        _collectSecond += Time.unscaledDeltaTime;
+        _collectSecond += deltaTime;
         if (_collectSecond >= 1f)
         {
             CollectPerSecond ();
@@ -137,7 +143,12 @@ public class GameManager : MonoBehaviour
         UserDataManager.Progress.Gold += value;
         GoldInfo.text = $"Gold: { UserDataManager.Progress.Gold.ToString("0") }";
 
-        UserDataManager.Save();
+        UserDataManager.Save(_saveDelayCounter < 0f);
+
+        if (_saveDelayCounter < 0f)
+        {
+            _saveDelayCounter = SaveDelay;
+        }
     }
 
     public void CollectByTap (Vector3 tapPosition, Transform parent)
